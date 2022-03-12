@@ -1,24 +1,51 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import SignUpForm from "./components/organisms/SignUpForm";
+import GlobalStyle from "./styles/GlobalStyle";
 
 function App() {
+  const [formData, setFormData] = useState({ email: "", password: "" });
+
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value, name } = e.target;
+    setFormData((preState) => ({ ...preState, [name]: value }));
+  };
+
+  const onClick = () => {
+    console.log(formData);
+  };
+
+  const formInputs = {
+    email: {
+      labelText: "이메일",
+      inputName: "email",
+      value: formData.email || "",
+      onChange
+    },
+    password: {
+      labelText: "비밀번호",
+      inputName: "password",
+      value: formData.password || "",
+      onChange
+    }
+  };
+
+  const formButton = {
+    theme: "primary",
+    text: "제출",
+    onClick
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "100%"
+      }}
+    >
+      <GlobalStyle />
+      <SignUpForm formInputs={formInputs} formButton={formButton} />
     </div>
   );
 }
