@@ -15,4 +15,9 @@ export const actionsData = {
   onClick: action("onClick")
 };
 
-export const Default = () => <Button theme="primary" text="button" />;
+export const Default = () => (
+  <Button theme="primary" text="button" {...actionsData} />
+);
+export const Success = () => (
+  <Button theme="success" text="button" {...actionsData} />
+);

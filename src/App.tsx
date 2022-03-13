@@ -44,7 +44,6 @@ function App() {
         height: "100%"
       }}
     >
-      <GlobalStyle />
       <SignUpForm formInputs={formInputs} formButton={formButton} />
     </div>
   );

@@ -7,9 +7,6 @@ const Styled = css`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  > * {
-    margin: 0.2rem;
-  }
 `;
 
 const SFormInput = styled.div`
@@ -17,7 +14,8 @@ const SFormInput = styled.div`
 `;
 
 const SLabel = styled.label`
-  width: 90%;
+  width: 100%;
+  padding: 0.4rem 0rem;
 `;
 
 export interface Props {
@@ -30,11 +28,13 @@ export interface Props {
 function FormInput({ labelText, ...props }: Props) {
   return (
     <SFormInput>
-      <SLabel>{labelText}</SLabel>
-      <Input
-        {...props}
-        type={props.inputName === "password" ? "password" : "text"}
-      />
+      <SLabel>
+        {labelText}
+        <Input
+          {...props}
+          type={props.inputName === "password" ? "password" : "text"}
+        />
+      </SLabel>
     </SFormInput>
   );
 }

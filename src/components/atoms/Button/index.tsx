@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 
 const Styled = css`
   outline: none;
-  width: 90%;
+  width: 100%;
   max-width: 10rem;
   border-radius: 7px;
   padding: 0.4rem;

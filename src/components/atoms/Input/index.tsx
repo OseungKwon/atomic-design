@@ -4,10 +4,10 @@ import styled, { css } from "styled-components";
 
 const Styled = css`
   outline: none;
-  width: 90%;
+  width: 100%;
   border: 1px solid #333;
   border-radius: 7px;
-  padding: 0.3rem;
+  padding: 0.5rem;
 `;
 
 const SInput = styled.input`
@@ -22,6 +22,6 @@ type Props = {
 };
 
 function Input({ inputName, ...props }: Props): React.ReactElement {
-  return <SInput name={inputName} {...props} />;
+  return <SInput name={inputName} {...props} value={props.value} />;
 }
 export default Input;
