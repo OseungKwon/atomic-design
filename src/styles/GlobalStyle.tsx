@@ -19,6 +19,8 @@ const GlobalStyle = createGlobalStyle`
   }
   button{
     border: none;
+    outline:none;
+    box-shadow: none;
   }
   button:focus{
     outline:none;
